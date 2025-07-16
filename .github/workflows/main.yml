@@ -9,13 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3  #checkout repo 
-    - name: Use Nodejs
+    - uses: actions/checkout@v3  # checkout repo
 
-    - uses: actions/setup-node@v4
+    - name: Use Nodejs
+      uses: actions/setup-node@v4
       with:
         node-version: 18
-    - name: npm install, build, and test
+
+    - name: npm install
       run: npm install
+
     - name: Run test
       run: npm test
